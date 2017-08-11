@@ -39,6 +39,7 @@ public class FormatoTest {
 		RespostaEmPorcento porcento = new RespostaEmPorcento();
 		porcento.setProxima(xml);
 		xml.setProxima(csv);
+		csv.setProxima(porcento);
 		porcento.responde(requisicao, conta);
 		
 		assertEquals("Felipe%0.0\n", outContent.toString());
