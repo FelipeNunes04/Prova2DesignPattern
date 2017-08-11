@@ -16,44 +16,8 @@ public class RealizadorDeInvestimentosTest {
 		poupanca.deposita(1000000);
 		Investimento conservador = new Conservador();
 		RealizadorDeInvestimentos r = new RealizadorDeInvestimentos();
-		r.calculaInvestimento(conservador, poupanca);
-		
-		assertEquals(1006000.00, poupanca.getSaldo(),0.01);
-		
-	}
-	
-	@Test
-	public void deveEntenderInvestimentoModeradoAltoValor() {
-		Conta poupanca = new Conta(Calendar.getInstance());
-		poupanca.deposita(1000000);
-		Investimento moderado = new Moderado();
-		RealizadorDeInvestimentos r = new RealizadorDeInvestimentos();
-		
-		r.calculaInvestimento(moderado, poupanca);
-		
-		List<Double> valoresInvestimentoModeradoEsperados = new ArrayList<>();
-		valoresInvestimentoModeradoEsperados.add(1005250.00);
-		valoresInvestimentoModeradoEsperados.add(1018750.00);
-
-		assertTrue(valoresInvestimentoModeradoEsperados.contains(poupanca.getSaldo()));
-		
-	}
-	
-	@Test
-	public void deveEntenderInvestimentoArrojadoAltoValor() {
-		Conta poupanca = new Conta(Calendar.getInstance());
-		poupanca.deposita(1000000);
-		Investimento arrojado = new Arrojado();
-		RealizadorDeInvestimentos r = new RealizadorDeInvestimentos();
-		
-		r.calculaInvestimento(arrojado, poupanca);
-		
-		List<Double> valoresInvestimentoArrojadoEsperados = new ArrayList<>();
-		valoresInvestimentoArrojadoEsperados.add(1037500.00);
-		valoresInvestimentoArrojadoEsperados.add(1022500.00);
-		valoresInvestimentoArrojadoEsperados.add(1004500.00);
-		
-		assertTrue(valoresInvestimentoArrojadoEsperados.contains(poupanca.getSaldo()));
+		r.calculaInvestimento(conservador, poupanca);		
+		assertEquals(985880, poupanca.getSaldo(),0.00001);
 		
 	}
 	
@@ -75,18 +39,18 @@ public class RealizadorDeInvestimentosTest {
 		double saldoComInvestimentoArrojado = poupanca.getSaldo();
 		
 		List<Double> valoresInvestimentoModeradoEsperados = new ArrayList<>();
-		valoresInvestimentoModeradoEsperados.add(101.13);
-		valoresInvestimentoModeradoEsperados.add(102.49);
-		
-		List<Double> valoresInvestimentoArrojadoEsperados = new ArrayList<>();
-		valoresInvestimentoArrojadoEsperados.add(104.92);
-		valoresInvestimentoArrojadoEsperados.add(103.40);
-		valoresInvestimentoArrojadoEsperados.add(101.58);
-		valoresInvestimentoArrojadoEsperados.add(106.33);
-		valoresInvestimentoArrojadoEsperados.add(104.79);
-		valoresInvestimentoArrojadoEsperados.add(102.95);
+		valoresInvestimentoModeradoEsperados.add(100.44);
+		valoresInvestimentoModeradoEsperados.add(99.11);
 
-		assertEquals(100.60, saldoComInvestimentoConservador,0.00001);
+		List<Double> valoresInvestimentoArrojadoEsperados = new ArrayList<>();
+		valoresInvestimentoArrojadoEsperados.add(104.21);
+		valoresInvestimentoArrojadoEsperados.add(102.7);
+		valoresInvestimentoArrojadoEsperados.add(100.89);
+		valoresInvestimentoArrojadoEsperados.add(102.83);
+		valoresInvestimentoArrojadoEsperados.add(101.34);
+		valoresInvestimentoArrojadoEsperados.add(99.56);
+
+		assertEquals(98.59, saldoComInvestimentoConservador,0.00001);
 		assertTrue(valoresInvestimentoModeradoEsperados.contains(saldoComInvestimentoModerado));
 		assertTrue(valoresInvestimentoArrojadoEsperados.contains(saldoComInvestimentoArrojado));
 		

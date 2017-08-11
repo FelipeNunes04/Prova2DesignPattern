@@ -1,5 +1,7 @@
 package br.edu.ifpi.design_pattern;
 
+import java.text.DecimalFormat;
+import java.text.Format;
 import java.util.Calendar;
 
 public class Conta {
@@ -22,7 +24,8 @@ public class Conta {
 	}
 	
 	public double getSaldo() {
-		String valorFormatado = String.format("%.2f", saldo); 
+		DecimalFormat f = new DecimalFormat("#.##");
+		String valorFormatado = f.format(saldo); 
 		return Double.parseDouble(valorFormatado.replace(',', '.'));
 	}
 	

@@ -6,6 +6,6 @@ public class RealizadorDeInvestimentos {
 	public void calculaInvestimento(Investimento investimento,Conta conta) {
 		double valorBrutoDoInvestimento = investimento.investir(conta);
 		double valorLiquidoDoInvestimento = valorBrutoDoInvestimento*porcentagemValorAdicionado;
-		conta.deposita(valorLiquidoDoInvestimento);
+		conta.setSaldo(valorLiquidoDoInvestimento+conta.getSaldo());
 	}
 }
