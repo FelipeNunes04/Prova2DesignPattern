@@ -12,7 +12,7 @@ public class RealizadorDeInvestimentosTest {
 	
 	@Test
 	public void deveEntenderInvestimentoConservadorAltoValor() {
-		Conta poupanca = new Conta(Calendar.getInstance());
+		Conta poupanca = new Conta(Calendar.getInstance(),"Felipe");
 		poupanca.deposita(1000000);
 		Investimento conservador = new Conservador();
 		RealizadorDeInvestimentos r = new RealizadorDeInvestimentos();
@@ -23,7 +23,7 @@ public class RealizadorDeInvestimentosTest {
 	
 	@Test
 	public void deveEntenderTodosOsTiposDeInvestimento() {
-		Conta poupanca = new Conta(Calendar.getInstance());
+		Conta poupanca = new Conta(Calendar.getInstance(),"Felipe");
 		poupanca.deposita(100);
 		Investimento conservador = new Conservador();
 		Investimento moderado = new Moderado();

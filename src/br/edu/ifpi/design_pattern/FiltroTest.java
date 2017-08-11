@@ -11,11 +11,11 @@ public class FiltroTest {
 	@Test
 	public void devePegarTodasAsContas() {
 		List<Conta> contas = new ArrayList<>();
-		Conta c1 = new Conta(Calendar.getInstance());
+		Conta c1 = new Conta(Calendar.getInstance(),"Felipe");
 		c1.deposita(180);
-		Conta c2 = new Conta(Calendar.getInstance());
+		Conta c2 = new Conta(Calendar.getInstance(),"Felipe");
 		c2.deposita(5000001);
-		Conta c3 = new Conta(Calendar.getInstance());
+		Conta c3 = new Conta(Calendar.getInstance(),"Felipe");
 		c3.deposita(90);
 		contas.add(c1);
 		contas.add(c2);
@@ -38,11 +38,11 @@ public class FiltroTest {
 		List<Conta> contas = new ArrayList<>();
 		Calendar c = Calendar.getInstance();
 		c.set(Calendar.MONTH, 1);
-		Conta c1 = new Conta(c);
+		Conta c1 = new Conta(c,"Felipe");
 		c1.deposita(180);
-		Conta c2 = new Conta(c);
+		Conta c2 = new Conta(c,"Felipe");
 		c2.deposita(500000);
-		Conta c3 = new Conta(Calendar.getInstance());
+		Conta c3 = new Conta(Calendar.getInstance(),"Felipe");
 		c3.deposita(90);
 		contas.add(c1);
 		contas.add(c2);

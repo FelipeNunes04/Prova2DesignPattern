@@ -9,14 +9,14 @@ public class DepositoESaqueTest {
 	
 	@Test(expected=RuntimeException.class)
 	public void deveEntenderSaquesComSaldoNegativo() {
-		Conta corrente = new Conta(Calendar.getInstance());
+		Conta corrente = new Conta(Calendar.getInstance(),"Felipe");
 		corrente.saca(1);
 		corrente.saca(1);
 	}
 	
 	@Test
 	public void deveEntenderSaquesEDepositosComSaldoPositivo() {
-		Conta corrente = new Conta(Calendar.getInstance());
+		Conta corrente = new Conta(Calendar.getInstance(),"Felipe");
 		corrente.deposita(100);
 		corrente.saca(50);
 		
@@ -26,7 +26,7 @@ public class DepositoESaqueTest {
 	
 	@Test
 	public void deveEntenderSaldoNegativoESaldoPositivo() {
-		Conta corrente = new Conta(Calendar.getInstance());
+		Conta corrente = new Conta(Calendar.getInstance(),"Felipe");
 		corrente.deposita(100);
 		corrente.saca(100);
 		Assert.assertEquals(Negativo.class, corrente.getEstadoAtual().getClass());
